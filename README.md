@@ -1,7 +1,7 @@
-# Superpower Finder Bot
+qoqq# Superpower Finder Bot
 
 ![image of the main screen](superpower.png)
-![cards](cards.png)
+![cards](cards.jpg)
 
 ## What
 'Find your superpower' bot
