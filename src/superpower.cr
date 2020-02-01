@@ -3,25 +3,25 @@ require "colorize"
 module Superpower
   VERSION = "0.1.0"
 
-	background = Colorize::ColorRGB.new(0, 0, 255)
+	background = Colorize::ColorRGB.new(0, 0, 205)
 
-	text = "                         \n "
-	text += "Superpower Bot          \n "
-	text += "==============          "
+	text = "                                   \n"
+	text += " Superpower Bot                    \n"
+	text += " ==============                    \n"
+	text += " Introduction          [COMPLETED] "
 	text = text.colorize.back(background).fore(:light_gray)
 	puts text
 
-	text = " Find your superpowers   "
+	text = " Find your superpowers             "
 	text = text.colorize.back(Colorize::ColorRGB.new(160, 160,160)).fore(background)
 	puts text
 
-	text = " "
-	text += "Your superpowers        \n "
-	text += "List of superpowers     \n "
-	text += "==============          \n "
-	text += "HELP                    \n "
-	text += "EXIT                    \n "
-	text += "                        "
+	text = " Your superpowers                  \n"
+	text += " List of superpowers               \n"
+	text += " ==============                    \n"
+	text += " HELP                              \n"
+	text += " EXIT                              \n"
+	text += "                                   "
 	text = text.colorize.back(background).fore(:light_gray)
 	puts text
 
