@@ -37,16 +37,18 @@ end
 class Superpower
   VERSION = "0.1.0"
 	@current_line = 3
-	@say = ""
+	@say = "not sure"
 
 	@lines = [
+		"",
 		"Superpower Bot",
-		"==============",
+		"--------------",
     "Introduction          [COMPLETED]",
 	  "Find your superpowers            ",
-		"==============",
+		"--------------",
 		"HELP",
-		"EXIT"
+		"EXIT",
+		""
 	]
 
 	def draw
@@ -58,7 +60,9 @@ class Superpower
 		@lines.each_with_index do |line, index|
 			line = " " + line
 			if @current_line == index
-				puts line.ljust(35).colorize.back(gray_background).fore(:light_gray)
+				print " ".colorize.back(blue_background)
+				print line.ljust(35)[1..-2].colorize.back(gray_background).fore(blue_background)
+				puts " ".colorize.back(blue_background)
 			else
 				puts line.ljust(35).colorize.back(blue_background).fore(:light_gray)
 			end
@@ -71,12 +75,12 @@ class Superpower
 			@current_line += 1
 			true
     when :up
-			if @current_line > 2
+			if @current_line > 3
 				@current_line -= 1
 			end
 			true
     when :down
-			if @current_line < 6
+			if @current_line < 7
 				@current_line += 1
 			end
 			true
@@ -97,7 +101,6 @@ class Superpower
 			if execute_action Screen.readkeypress
 				draw
 			else
-				puts "test"
 				puts @say
 				exit
 			end
