@@ -12,7 +12,7 @@ module Screen
 			input = String.new(buffer[0, bytes_read])
 
 			case input
-			when "\n"
+			when "\r"
 				:enter
 			when "\e[A", "w"
 				:up
@@ -72,8 +72,8 @@ class Superpower
   def execute_action(action)
     case action
     when :enter
-			@current_line += 1
-			true
+			puts "hello"
+			false
 		when :up
 			@current_line -= 1
 			if @current_line === 2
