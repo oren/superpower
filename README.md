@@ -17,7 +17,7 @@ I'll present you 30 stories and you'll pick the two that you think represent you
 ## Details of the bot
 The bot can be operated from the command line or from a website. Both interfaces use HTTP API to access the logic of the bot.
 
-The Bot has 3 systems:
+The Bot has 4 systems:
 * CLI - command line interface
 * Webite - web interface
 * Server - HTTP API
