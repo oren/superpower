@@ -3,7 +3,7 @@ require "colorize"
 module Superpower
   VERSION = "0.1.0"
 
-	background = Colorize::ColorRGB.new(0, 0, 205)
+	background = Colorize::ColorRGB.new(0, 0, 139)
 
 	text = "                                   \n"
 	text += " Superpower Bot                    \n"
