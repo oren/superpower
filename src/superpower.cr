@@ -145,7 +145,6 @@ class Superpower
 		end
 	end
 
-
 	# TODO: read from db and highlight the completed task
 end
 
