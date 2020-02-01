@@ -25,7 +25,6 @@ module Superpower
 	text = text.colorize.back(background).fore(:light_gray)
 	puts text
 
-
 	STDIN.raw do |io|
 		buffer = Bytes.new(3)
 		bytes_read = io.read(buffer)
@@ -52,6 +51,9 @@ module Superpower
 			:unknown
 		end
 	end
+
+	# Hi, I am a bot that helps you find your superpowers. It will take you 30 mintues of playing.
+  # I'll present you 30 stories and you'll pick the two that you think represent you. Let's get started!
 
 	# TODO: read from db and highlight the completed task
 end
