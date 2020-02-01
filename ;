@@ -12,12 +12,14 @@ module Screen
 			input = String.new(buffer[0, bytes_read])
 
 			case input
-			when "\n"
-				:enter
 			when "\e[A", "w"
 				:up
 			when "\e[B", "s"
 				:down
+			when "\e[C", "d"
+				:right
+			when "\e[D", "a"
+				:left
 			when "\e"
 				:escape
 				return false
@@ -31,15 +33,16 @@ module Screen
 				:unknown
 			end
 		end
+
+		true
 	end
 end
 
 class Superpower
   VERSION = "0.1.0"
 	@current_line = 3
-	@say = ""
 
-	@lines = [
+	lines = [
 		"Superpower Bot",
 		"==============",
     "Introduction          [COMPLETED]",
@@ -52,11 +55,7 @@ class Superpower
 	def draw
 		Screen.clear
 
-		blue_background = Colorize::ColorRGB.new(0, 0, 139)
-		gray_background = Colorize::ColorRGB.new(160, 160,160)
-
-		@lines.each_with_index do |line, index|
-			line = " " + line
+		lines.each_with_index do |line, index|
 			if @current_line == index
 				puts line.ljust(35).colorize.back(gray_background).fore(:light_gray)
 			else
@@ -65,40 +64,37 @@ class Superpower
 		end
 	end
 
-  def execute_action(action)
-    case action
-    when :enter
-			@current_line += 1
-			true
-    when :up
-			if @current_line > 2
-				@current_line -= 1
-			end
-			true
-    when :down
-			if @current_line < 6
-				@current_line += 1
-			end
-			true
-    when :ctrl_c, :escape, :q
-			@say = "bye!"
-      false
-    when :unknown
-      true
-    else
-      #raise ArgumentError.new "Unknown action: #{action}"
-    end
-  end
+	blue_background = Colorize::ColorRGB.new(0, 0, 139)
+  gray_background = Colorize::ColorRGB.new(160, 160,160)
+
+	Screen.clear
+
+	text = "                                   \n"
+	text += " Superpower Bot                    \n"
+	text += " ==============                    \n"
+	text += " Introduction          [COMPLETED] "
+	text = text.colorize.back(background).fore(:light_gray)
+	#puts text
+
+	text = " Find your superpowers             "
+	text = text.colorize.back(Colorize::ColorRGB.new(160, 160,160)).fore(background)
+	#puts text
+
+	text = " Your superpowers                  \n"
+	text += " List of superpowers               \n"
+	text += " ==============                    \n"
+	text += " HELP                              \n"
+	text += " EXIT                              \n"
+	text += "                                   "
+	text = text.colorize.back(background).fore(:light_gray)
+	#puts text
 
 	def run
-		draw
-
 		until false
-			if execute_action Screen.readkeypress
-				draw
+			if Screen.readkeypress
+				# insert_tile
+				# draw
 			else
-				puts "test"
-				puts @say
 				exit
 			end
 		end
