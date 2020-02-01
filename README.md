@@ -1,4 +1,4 @@
-qoqq# Superpower Finder Bot
+# Superpower Finder Bot
 
 ![image of the main screen](superpower.png)
 ![cards](cards.jpg)
