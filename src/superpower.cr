@@ -37,7 +37,7 @@ end
 class Superpower
   VERSION = "0.1.0"
 	@current_line = 3
-	@say = "not sure"
+	@say = "bye"
 
 	@lines = [
 		"",
@@ -74,14 +74,16 @@ class Superpower
     when :enter
 			@current_line += 1
 			true
-    when :up
-			if @current_line > 3
-				@current_line -= 1
+		when :up
+			@current_line -= 1
+			if @current_line === 2
+				@current_line = 7
 			end
 			true
     when :down
-			if @current_line < 7
-				@current_line += 1
+			@current_line += 1
+			if @current_line === 8
+				@current_line = 3
 			end
 			true
     when :ctrl_c, :escape, :q
