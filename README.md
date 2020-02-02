@@ -27,12 +27,12 @@ Run
 ## Architecture
 
 ### System Context
-The bot can be operated from the command line or from a website. Both interfaces use HTTP API to access the logic of the bot.
+The bot is operated from the command line or from a website. Both interfaces use HTTP API to access the logic of the bot.
 
 The Bot has 4 parts:
-* CLI - command line interface
-* Webite - web interface
-* Server - HTTP API
+* CLI - Command Line Interface. Executable written in Crystal.
+* Website - Web Interface. Javascript, HTML, and CSS written in Svelte.
+* API - HTTP API. Backend written in Crystal.
 * Core - Bot's logic
 
 ## Questions
