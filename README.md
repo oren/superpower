@@ -33,7 +33,7 @@ The Bot has 4 parts:
 * CLI - Command Line Interface. Executable written in Crystal.
 * Website - Web Interface. Javascript, HTML, and CSS written in Svelte.
 * API - HTTP API. Backend written in Crystal.
-* Core - Bot's logic
+* Core - The Bot's logic. Library written in Crystal.
 
 ## Questions
 * Can the CLI skip the HTTP API and talk directly to the core?
